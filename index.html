@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informasi Mangga</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #fcedc2, #fcf3db);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #4F6B2A,
+                    #6B8E23,
+                    #8FAF3A
+                );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px 55px;
+
+            border-radius: 0 0 40px 40px;
+
+            box-shadow:
+                0 8px 25px (71, 29, 95, 0.3);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            top: -70px;
+            left: -50px;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+            bottom: -120px;
+            right: -60px;
+        }
+
+        .fruit-icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.92;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 900px;
+            margin: -30px auto 50px;
+            padding: 0 18px;
+        }
+
+
+        /* =========================
+           IMAGE CARD
+        ========================= */
+
+        .fruit-card {
+            background: white;
+            padding: 15px;
+            border-radius: 28px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.09);
+
+            margin-bottom: 22px;
+
+            transition: 0.3s;
+        }
+
+        .fruit-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .fruit-image {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            display: block;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 27px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 7px 22px rgba(0,0,0,0.06);
+
+            border-left: 6px solid #FFF4C2 (327, 96%, 68%);
+
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            color: #ff9900;
+
+            font-size: 23px;
+
+            margin-bottom: 14px;
+        }
+
+        .section p {
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            text-align: justify;
+        }
+
+
+        /* =========================
+           INFORMASI UMUM
+        ========================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        .info-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #d2f379,
+                    #e1ee95
+                );
+
+            padding: 19px;
+
+            border-radius: 18px;
+
+            border: 1px solid   #4F6B2A;
+        }
+
+        .info-box strong {
+            display: block;
+
+            color: #4F6B2A;
+
+            margin-bottom: 7px;
+
+            font-size: 15px;
+        }
+
+        .info-box span {
+            font-size: 14px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           HABITAT
+        ========================= */
+
+        .habitat-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf8e9,
+                    #f9fff6
+                );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            border-left: 5px solid #5b9b45;
+        }
+
+        .habitat-box h3 {
+            color: #477c37;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PENYEBARAN
+        ========================= */
+
+        .distribution {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 18px;
+        }
+
+        .region {
+            background: #d2f379;
+
+            border-radius: 16px;
+
+            padding: 16px;
+
+            border: 1px solid #4F6B2A;
+
+            transition: 0.3s;
+        }
+
+        .region:hover {
+            background: #e1ee95;
+
+            transform: scale(1.02);
+        }
+
+        .region strong {
+            color: #4F6B2A;
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .region span {
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           SENTRA BUDIDAYA
+        ========================= */
+
+        .sentra {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 13px;
+
+            margin: 14px 0;
+
+            padding: 14px;
+
+            background: #d2f379;
+
+            border-radius: 15px;
+        }
+
+        .sentra-icon {
+            min-width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #4F6B2A;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 18px;
+        }
+
+        .sentra-text {
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .sentra-text strong {
+            color: #4F6B2A;
+        }
+
+
+        /* =========================
+           CIRI-CIRI
+        ========================= */
+
+        .characteristics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 13px;
+
+            margin-top: 15px;
+        }
+
+        .characteristic {
+            padding: 17px;
+
+            background: #d2f379;
+
+            border-radius: 16px;
+        }
+
+        .characteristic h3 {
+            color: #4F6B2A;
+
+            font-size: 16px;
+
+            margin-bottom: 6px;
+        }
+
+        .characteristic p {
+            font-size: 14px;
+
+            text-align: left;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MANFAAT
+        ========================= */
+
+        .benefit {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin: 14px 0;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        .benefit-icon {
+            min-width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: #4F6B2A;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           CARA PERAWATAN MANGGA
+        ========================= */
+
+        .info-section {
+            margin: 30px 0;
+        }
+
+        .info-section h2 {
+            text-align: center;
+
+            margin-botom: 5px;
+        }
+
+        .info-card {
+            background: #d2f379;
+
+            border-left: 5px solid #4F6B2A;
+
+            padding: 18px;
+
+            margin-bottom: 8px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.12);
+        }
+
+        .info-card h3 {
+            color:  #4F6B2A;
+
+            margin-bottom: 1px;
+        } 
+
+        .info-card p {
+            color: #4F6B2A;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FAKTA MENARIK
+        ========================= */
+
+        .fact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9900,
+                    #f7b656,
+                    #f3cc91
+                );
+
+            color: white;
+
+            border: none;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .fact h2 {
+            color: white;
+
+            margin-bottom: 13px;
+        }
+
+        .fact p {
+            text-align: center;
+
+            color: white;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MUSIK
+        ========================= */
+
+        .music-box {
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 100;
+        }
+
+        .music-button {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4F6B2A,
+                    #addd6f
+                );
+
+            color: white;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 18px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .music-button:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 38px 18px 48px;
+            }
+
+            .header h1 {
+                font-size: 29px;
+            }
+
+            .fruit-icon {
+                font-size: 52px;
+            }
+
+            .fruit-image {
+                height: 230px;
+            }
+
+            .info-grid,
+            .distribution,
+            .characteristics {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 21px;
+
+                border-left-width: 4px;
+            }
+
+            .section h2 {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="fruit-icon">
+            🥭
+        </div>
+
+        <h1>Mangga</h1>
+
+        <p>
+            Mengenal lebih dekat buah tropis Indonesia
+        </p>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             GAMBAR
+        ========================= -->
+
+        <div class="fruit-card">
+
+            <!--
+                GANTI URL GAMBAR INI
+                DENGAN GAMBAR MANGGA
+                YANG KAMU GUNAKAN
+            -->
+
+            <img
+                class="fruit-image"
+                src="mangga.jpeg"
+                alt="mangga"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             TENTANG MANGGA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🥭Tentang Mangga</h2>
+
+            <p>
+            Mangga merupakan salah satu buah tropis yang banyak dibudidayakan di Indonesia. Buah ini memiliki rasa yang beragam, mulai dari manis hingga sedikit asam, tergantung jenis dan tingkat kematangannya. 
+            Mangga memiliki nama ilmiah Mangifera indica L. dan termasuk dalam famili Anacardiaceae.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMASI UMUM
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🔎 Informasi Umum</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <strong>Nama Lokal</strong>
+
+                    <span>
+                        mangga
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Nama Ilmiah</strong>
+
+                    <span>
+                       Mangifera indica L.
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Famili</strong>
+
+                    <span>
+                        Anacardiaceae
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Warna Buah</strong>
+
+                    <span>
+                        Hijau, kuning, jingga, hingga kemerahan
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Daging Buah</strong>
+
+                    <span>
+                       Kuning hingga jingga
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Bentuk Buah</strong>
+
+                    <span>
+                        Bulat, lonjong, hingga agak pipih
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CIRI-CIRI
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🍃 Ciri-Ciri Mangga</h2>
+
+            <div class="characteristics">
+
+                <div class="characteristic">
+
+                    <h3>🌱 Bentuk Pohon</h3>
+
+                    <p>
+                        Pohon mangga dapat tumbuh sekitar 10 hingga 30 meter dengan batang yang kuat dan tajuk yang rimbun.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🍃 Daun</h3>
+
+                    <p>
+                        Daunnya berbentuk lonjong, berwarna hijau tua 
+                        ketika dewasa dan dapat berwarna kemerahan ketika masih muda.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🥭 Buah</h3>
+
+                    <p>
+                      Buah mangga memiliki bentuk dan ukuran yang beragam sesuai 
+                      varietasnya. Kulitnya dapat berubah warna ketika matang.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>💛 Daging Buah</h3>
+
+                    <p>
+                      Daging buah umumnya berwarna kuning atau jingga, 
+                      memiliki tekstur lembut, dan terasa manis ketika matang.
+                    </p>
+
+                </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             HABITAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🌱 Habitat Mangga</h2>
+
+            <div class="habitat-box">
+
+                <h3>🌿 Habitat Alami dan Budidaya</h3>
+
+                <p>
+                 Mangga dapat tumbuh dengan baik di daerah tropis dan subtropis. 
+                 Tanaman ini membutuhkan sinar matahari yang cukup, tanah yang subur, serta drainase yang baik.
+                </p>
+
+                <p style="margin-top: 12px;">
+                   Mangga dapat dibudidayakan di pekarangan, kebun, dan perkebunan, 
+                   terutama pada daerah dataran rendah hingga dataran sedang.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PENYEBARAN INDONESIA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>Penyebaran Mangga di Indonesia</h2>
+
+            <p>
+                Markisa tersebar di berbagai wilayah Indonesia,
+                terutama daerah yang memiliki kondisi iklim dan
+                lingkungan yang sesuai untuk pertumbuhan tanaman
+                manggis.
+            </p>
+
+
+            <div class="distribution">
+
+
+                <div class="region">
+
+                    <strong>Sumatera</strong>
+
+                    <span>
+                        Mangga dibudidayakan di berbagai wilayah Sumatera, seperti Sumatera Barat, Sumatera Utara, Riau, dan Jambi.
+                    </span>
+
+                </div> 
+
+
+                <div class="region">
+
+                    <strong>Jawa</strong>
+
+                    <span>
+                       Jawa merupakan salah satu wilayah yang banyak menghasilkan mangga, terutama Jawa Barat, Jawa Tengah, dan Jawa Timur.
+                    </span>
+
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Bali</strong>
+
+                    <span>
+                      Mangga juga banyak ditemukan di kebun dan pekarangan masyarakat di Bali.
+                    </span>
+                
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Kalimantan dan Sulawesi</strong>
+
+                    <span>
+                       Tanaman mangga juga dapat tumbuh dan dibudidayakan di berbagai wilayah Kalimantan dan Sulawesi.
+                    </span>
+                </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SENTRA BUDIDAYA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🚜 Sentra Budidaya Mangga di Indonesia</h2>
+
+            <p>
+                Mangga dibudidayakan di sejumlah daerah di
+                Indonesia. Beberapa wilayah dikenal sebagai
+                sentra produksi manggis karena memiliki kondisi
+                lingkungan dan kegiatan budidaya yang mendukung.
+            </p>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Timur
+                        
+                    </strong>
+                    <br>
+
+                 Beberapa daerah seperti Probolinggo, Pasuruan, dan Situbondo dikenal sebagai wilayah penghasil mangga.
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Barat
+                    </strong>
+
+                    <br>
+
+                    Daerah seperti Indramayu, Majalengka, dan Cirebon memiliki budidaya mangga yang cukup berkembang.
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Tengah
+                    </strong>
+
+                    <br>
+
+                   Mangga juga banyak dibudidayakan di beberapa wilayah Jawa Tengah.
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Sumatra
+                    </strong>
+
+                    <br>
+
+                    Berbagai daerah di Sumatera juga membudidayakan mangga untuk kebutuhan masyarakat dan perdagangan.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             KANDUNGAN DAN MANFAAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>💜 Kandungan dan Manfaat</h2>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                   
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                  Mengandung vitamin C yang membantu mendukung daya tahan tubuh.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                    Mengandung vitamin A yang berperan dalam menjaga kesehatan mata.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                    Mengandung serat yang membantu menjaga kesehatan pencernaan.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                   Mengandung folat, kalium, dan berbagai antioksidan.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                     ✓
+                </div>
+
+                <div>
+                    Mengandung air dan gula alami yang dapat menjadi sumber energi bagi tubuh.
+                </div>
+
+            </div>
+             
+
+
+        </section>
+
+
+
+         <!-- =========================
+             CARA PERAWATAN MANGGA
+        ========================= -->
+
+        <section class="info-section">
+            
+            <h2>🌱 Cara Perawatan Mangga</h2>
+
+            <div class="info-card">
+                <h3>💧 Penyiraman</h3>
+                <p>
+                    Siram tanaman secara rutin, terutama ketika masih muda dan saat musim kemarau. Hindari genangan air di sekitar akar.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>☀️ Sinar Matahari</h3>
+                <p>
+                   Mangga membutuhkan sinar matahari yang cukup agar pertumbuhan dan proses pembentukan buah dapat berlangsung dengan baik.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>🌿 Pemupukan</h3>
+                <p>
+                   Berikan pupuk secara berkala untuk membantu pertumbuhan tanaman serta mendukung pembentukan bunga dan buah.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>🌿 Pemupukan</h3>
+                <p>
+                    Berikan pupuk secara berkala untuk membantu pertumbuhan daun, bunga, dan buah.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>✂️ Pemangkasan</h3>
+                <p>
+                     Pangkas cabang yang kering, rusak, atau terlalu lebat agar tanaman memiliki bentuk yang baik dan sirkulasi udara tetap terjaga.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>🐛 Pengendalian Hama</h3>
+                <p>
+                   Periksa daun, bunga, dan buah secara rutin untuk mendeteksi hama atau penyakit sejak dini.
+                </p>
+            </div>
+       
+        </section>
+
+
+
+        <!-- =========================
+             FAKTA MENARIK
+        ========================= -->
+
+        <section class="section fact">
+
+            <h2>✨ Tahukah Kamu?</h2>
+
+            <p>
+                Mangga memiliki banyak varietas dengan bentuk, warna, rasa, dan aroma yang berbeda. 🥭 Ada mangga yang lebih cocok dimakan ketika matang, 
+                sementara beberapa jenis juga nikmat dikonsumsi ketika masih muda sebagai rujak atau manisan.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            ATPH SMKN 1 DUA KOTO 2026
+        </p>
+
+        <p>
+            © 2026 | ratihanjeliaguspamora
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         TOMBOL MUSIK
+    ========================= -->
+
+    <div class="music-box">
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+            title="Putar musik"
+        >
+            🎵
+        </button>
+
+        <audio
+            id="backgroundMusic"
+            loop
+        >
+
+            <source
+                src="ssstik.io_1790242004453.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT MUSIK
+    ========================= -->
+
+    <script>
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+        const button =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                button.innerHTML = "🔊";
+
+            } else {
+
+                music.pause();
+
+                button.innerHTML = "🎵";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
